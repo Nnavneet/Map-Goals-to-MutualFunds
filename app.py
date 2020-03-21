@@ -10,10 +10,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
 app.secret_key = "MF"
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 api.add_resource( Goal, '/goal/<string:name>' )
 
 
